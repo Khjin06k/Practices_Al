@@ -68,15 +68,3 @@ public class P4 {
         return true;
     }
 }
-//연결된 등대가 많은 등대를 뽑을수록 불이 켜지는 등대 수가 줄어둚
-//Map을 이용해 key는 인덱스, value는 값으로 하여 value가 큰 값의 key를 가지고 array에서 등대 방문 여부를 확인하기
-        /*HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i = 1; i<=n; i++){
-            int sum = 0;
-            for(int j = 1; j<=n; j++){
-                sum += array[i][j];
-            }
-            map.put(i, sum);
-        }
-        List<Integer> valueList = new ArrayList<>(map.values()); //HashMap의 value값을 기준으로 정렬하기
-        valueList.sort(Integer::compareTo);*/

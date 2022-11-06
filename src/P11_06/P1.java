@@ -3,6 +3,10 @@ import java.util.*;
 
 //사각형 달팽이
 public class P1 {
+    public static boolean isValid(int row, int col, int M, int N) {
+        return (row >= 0 && row < M && col >= 0 && col < N);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -24,7 +28,8 @@ public class P1 {
             int[] move = moves[dir];
             row = row+move[0];
             col = col+move[1];
-            while((row >= 0 && row < m && col >= 0 && col < n) && (result[row][col] != 0)){//범위를 벗어나지 않아야 함
+            while(isValid(row, col, m, n) && result[row][col] == 0){//범위를 벗어나지 않아야 함 + 한바퀴를 다 돌았을 때 값이 들어가지 않은 경우 인덱스 변동 필요
+//            while(row >= 0 && row < m && col >= 0 && col < n){//범위를 벗어나지 않아야 함
                 result[row][col] = count;
                 row = row+move[0];
                 col = col+move[1];
@@ -43,7 +48,6 @@ public class P1 {
             }
             System.out.println("");
         }
-
     }
 }
 
